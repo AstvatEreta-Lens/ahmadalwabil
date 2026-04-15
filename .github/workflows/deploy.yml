@@ -17,13 +17,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2. Setup Swift (stable version)
+      # 2. Setup Swift (compatible with Xcode 16.4)
       - name: Setup Swift
         uses: swift-actions/setup-swift@v1
         with:
-          swift-version: "5.8"
+          swift-version: "5.10"
 
-      # 3. Clean cache (fix Xcode 16.4 bug)
+      # 3. Clean cache (fix module / SDK issue)
       - name: Clean Swift & Xcode cache
         run: |
           rm -rf ~/.swiftpm
@@ -35,13 +35,13 @@ jobs:
       - name: Resolve dependencies
         run: swift package resolve
 
-      # 5. (Optional debug - bisa dihapus nanti)
-      - name: Debug Swift
+      # 5. Debug info (optional tapi bagus untuk awal)
+      - name: Debug Swift Environment
         run: |
           swift --version
           swift build
 
-      # 6. Generate Publish site
+      # 6. Generate Publish website
       - name: Generate website
         run: swift run publish generate
 
