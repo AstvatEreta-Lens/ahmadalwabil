@@ -1,0 +1,17 @@
+{
+  "name": "myweb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss -i ./Resources/styles/input.css -o ./Resources/styles/global.css && swift run",
+    "dev": "tailwindcss -i ./Resources/styles/input.css -o ./Resources/styles/global.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.2.2",
+    "tailwindcss": "^4.2.2"
+  }
+}
