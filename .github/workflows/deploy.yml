@@ -21,7 +21,7 @@ jobs:
       - name: Setup Swift
         uses: swift-actions/setup-swift@v1
         with:
-          swift-version: "5.10"
+          swift-version: "6.0"
 
       # 3. Clean cache (fix module / SDK issue)
       - name: Clean Swift & Xcode cache
