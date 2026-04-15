@@ -5,22 +5,47 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   build-and-deploy:
     runs-on: macos-latest
 
     steps:
+      # 1. Checkout repo
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # 2. Setup Swift (stable version)
       - name: Setup Swift
         uses: swift-actions/setup-swift@v1
         with:
-          swift-version: "5.5"
+          swift-version: "5.8"
 
+      # 3. Clean cache (fix Xcode 16.4 bug)
+      - name: Clean Swift & Xcode cache
+        run: |
+          rm -rf ~/.swiftpm
+          rm -rf ~/Library/Caches/com.apple.dt.Xcode
+          rm -rf ~/Library/Developer/Xcode/DerivedData/*
+          rm -rf .build
+
+      # 4. Resolve dependencies
+      - name: Resolve dependencies
+        run: swift package resolve
+
+      # 5. (Optional debug - bisa dihapus nanti)
+      - name: Debug Swift
+        run: |
+          swift --version
+          swift build
+
+      # 6. Generate Publish site
       - name: Generate website
         run: swift run publish generate
 
+      # 7. Deploy ke gh-pages
       - name: Deploy to GitHub Pages
         run: |
           cd Output
