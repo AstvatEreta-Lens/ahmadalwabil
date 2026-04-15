@@ -1,7 +1,17 @@
 .DS_Store
-/build
-/.build
-/.swiftpm
-/*.xcodeproj
-.publish
+
+# Swift / Publish
+.build/
+.swiftpm/
+.publish/
+Output/
+
+# Xcode
+*.xcodeproj
+DerivedData/
+
+# Node
 node_modules/
+
+# Misc
+.env
