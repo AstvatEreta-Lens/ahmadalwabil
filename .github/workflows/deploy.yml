@@ -39,7 +39,7 @@ jobs:
 
       # 6. Generate Publish website
       - name: Generate website
-        run: swift run publish generate
+        run: swift run ahmadalwabil publish generate
 
       # 7. Deploy ke gh-pages
       - name: Deploy to GitHub Pages
