@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --color-ghibli-bg: var(--bg-primary);
+    --color-ghibli-card: var(--bg-secondary);
+    --color-ghibli-text: var(--text-primary);
+    --color-ghibli-sub: var(--text-sub);
+    --color-ghibli-accent: var(--accent);
+    --color-ghibli-accent-hover: var(--accent-hover);
+    --color-ghibli-green: var(--green);
+    --font-serif: "Playfair Display", ui-serif, "Georgia", serif;
+    --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+
+    --leading-relaxed: 1.8;
+    --tracking-tighter: -0.05em;
+    --tracking-tight: -0.02em;
+    --tracking-wide: 0.05em;
+
+    --animate-marquee-right: marquee-right 40s linear infinite;
+    --animate-reveal: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    --animate-ghibli-float: ghibli-float 15s ease-in-out infinite;
+
+    @keyframes marquee-right {
+        0% {
+            transform: translateX(-50%);
+        }
+
+        100% {
+            transform: translateX(0%);
+        }
+    }
+
+    @keyframes reveal {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes ghibli-float {
+
+        0%,
+        100% {
+            transform: translate(0, 0);
+        }
+
+        33% {
+            transform: translate(15px, -15px);
+        }
+
+        66% {
+            transform: translate(-10px, 10px);
+        }
+    }
+
+    @keyframes firefly-pulse {
+
+        0%,
+        100% {
+            opacity: 0.3;
+            transform: scale(0.8);
+            shadow: 0 0 0px var(--color-ghibli-accent);
+        }
+
+        50% {
+            opacity: 1;
+            transform: scale(1.2);
+            shadow: 0 0 15px var(--color-ghibli-accent);
+        }
+    }
+
+    --animate-firefly: ghibli-float 15s ease-in-out infinite,
+    firefly-pulse 3s ease-in-out infinite;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    :root {
+        /* DEFAULT: DARK GHIBLI */
+        --bg-primary: #121A1C;
+        --bg-secondary: #1E2B2E;
+        --text-primary: #EAE6DB;
+        --text-sub: #9BA8A8;
+        --accent: #DDA77B;
+        --accent-hover: #E8C19D;
+        --green: #4A6E53;
+    }
+
+    :root[data-theme="light"] {
+        /* LIGHT GHIBLI */
+        --bg-primary: #F4EFE6;
+        --bg-secondary: #FFFFFF;
+        --text-primary: #2D3A3A;
+        --text-sub: #6D7A7A;
+        --accent: #D87D4A;
+        --accent-hover: #C26738;
+        --green: #5E8B65;
+    }
+}
+
+/* --- SCROLL REVEAL STYLES --- */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- FOGGY MASK FOR MARQUEE --- */
+.foggy-mask {
+    mask-image: linear-gradient(to right,
+            transparent,
+            black 15%,
+            black 85%,
+            transparent);
+    -webkit-mask-image: linear-gradient(to right,
+            transparent,
+            black 15%,
+            black 85%,
+            transparent);
+}
+
+/* --- GHIBLI GLOW EFFECT --- */
+.ghibli-glow {
+    box-shadow: 0 0 0 0 rgba(100, 255, 218, 0);
+}
+
+.ghibli-glow:hover {
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5),
+        0 0 20px -5px var(--color-ghibli-accent);
+}
+
+/* --- APPLE-LIKE SPRING MODAL --- */
+.modal-spring {
+    animation: spring-in 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes spring-in {
+    0% {
+        transform: scale(0.9) translateY(40px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+.glass-modal {
+    backdrop-filter: blur(24px) saturate(200%) !important;
+    -webkit-backdrop-filter: blur(24px) saturate(200%) !important;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Default Liquid Dark Glass */
+:root .glass-modal {
+    background: rgba(28, 38, 40, 0.5) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    box-shadow:
+        0 25px 50px -12px rgba(0, 0, 0, 0.5),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    color: var(--color-ghibli-text);
+}
+
+/* Fresh Liquid Light Glass */
+:root[data-theme="light"] .glass-modal {
+    background: rgba(255, 255, 255, 0.35) !important;
+    border: 1px solid rgba(255, 255, 255, 0.8) !important;
+    box-shadow:
+        0 40px 100px -20px rgba(0, 0, 0, 0.08),
+        inset 0 1px 2px rgba(255, 255, 255, 1);
+    color: #0F172A !important;
+}
+
+/* Fix Tag Contrast in Light Mode inside Modal - ULTRA VISIBILITY */
+:root[data-theme="light"] .glass-modal .tag-pill {
+    background: rgba(255, 255, 255, 0.6) !important;
+    color: #C2410C !important;
+    border: 1px solid rgba(194, 65, 12, 0.4) !important;
+    font-weight: 600 !important;
+}
+
+:root[data-theme="light"] .glass-modal h2,
+:root[data-theme="light"] .glass-modal h3,
+:root[data-theme="light"] .glass-modal p,
+:root[data-theme="light"] .glass-modal section {
+    color: #0F172A !important;
+}
