@@ -90,5 +90,5 @@ struct MockData {
         ),
     ]
     
-    static let certificates: [String] = ["certif-1.webp", "certif-2.webp", "certif-3.png", "certif-4.png", "certif-5.png", "certif-6.png", "certif-7.png", "certif-8.png", "certif-9.png", "certif-10.png"]
+    static let certificates: [String] = ["certif-11.webp","certif-1.webp", "certif-2.webp", "certif-3.png", "certif-4.png", "certif-5.png", "certif-6.png", "certif-7.png", "certif-8.png", "certif-9.png", "certif-10.png"]
 }

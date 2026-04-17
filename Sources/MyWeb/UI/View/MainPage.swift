@@ -264,7 +264,7 @@ struct GhibliHTMLFactory: HTMLFactory {
                     .section(
                         .id("certificates"),
                         .class("min-h-[50vh] flex flex-col justify-center overflow-x-hidden py-20 border-t border-ghibli-text/5 scroll-reveal"),
-                        .h2(.class("text-3xl md:text-4xl font-serif mb-16 text-center text-ghibli-text font-bold tracking-wide"), ""),
+                        .h2(.class("text-3xl md:text-4xl font-serif mb-16 text-center text-ghibli-text font-bold tracking-wide"), "Certifications"),
                         .div(
                             .class("relative w-full max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl bg-ghibli-card border border-ghibli-text/10 group"),
                             .div(
