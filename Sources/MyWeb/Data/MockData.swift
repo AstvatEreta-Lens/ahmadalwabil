@@ -26,7 +26,7 @@ struct MockData {
             I worked as the Tech Lead on this project, where I was responsible for defining the technical architecture, connecting the WhatsApp Business API with the backend system, and integrating the backend AI services. In addition, I implemented frontend API calls to ensure smooth communication between the macOS application, backend services, and the AI system, while coordinating the overall development process.
             """,
             date: "Dec 2025",
-            thumbnail: "klar-thumbnail.webp",
+            thumbnail: "klar-display1.webp",
             tags: ["SwiftUI", "AppKit", "Combine", "Network", "Ollama", "nodeJs", "Python", "Whatsapp Business API"],
             imagesDisplay: ["klar-display1.webp", "klar-display2.webp", "klar-display3.webp", "klar-display4.webp"]
         ),
