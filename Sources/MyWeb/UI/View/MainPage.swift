@@ -125,7 +125,12 @@ struct GhibliHTMLFactory: HTMLFactory {
                                     .attribute(named: "data-i18n", value: "hero.greeting"),
                                     "Hello, I'm Ahmad Al Wabil"
                                 ),
-                            .h2(.class("hero-reveal opacity-0 text-2xl md:text-3xl font-sans mb-6 font-medium text-ghibli-accent tracking-wide"), "iOS Developer"),
+                            .h2(
+                                .class("hero-reveal opacity-0 text-2xl md:text-3xl font-sans mb-6 font-medium text-ghibli-accent tracking-wide min-h-[1.5em]"),
+                                .span(.id("role-typing")),
+                                .span(.class("cursor-blink"))
+                            ),
+
                             .p(
                                 .class("hero-reveal opacity-0 text-lg md:text-xl text-ghibli-text/80 mb-10 max-w-2xl leading-relaxed"),
                                 .attribute(named: "data-i18n-html", value: "hero.description"),

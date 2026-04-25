@@ -491,3 +491,45 @@ if (certTrack) {
         }, 1500);
     };
 }
+
+// --- TYPING ANIMATION ---
+function initTypingAnimation() {
+    const typingElement = document.getElementById('role-typing');
+    if (!typingElement) return;
+
+    const roles = ["iOS Developer", "Data Scientist"];
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typeSpeed = 100;
+
+    function type() {
+        const currentRole = roles[roleIndex];
+        
+        if (isDeleting) {
+            charIndex--;
+            typeSpeed = 50;
+        } else {
+            charIndex++;
+            typeSpeed = 150;
+        }
+
+        typingElement.textContent = currentRole.substring(0, charIndex);
+
+        if (!isDeleting && charIndex === currentRole.length) {
+            isDeleting = true;
+            typeSpeed = 2000; // Pause at end
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            roleIndex = (roleIndex + 1) % roles.length;
+            typeSpeed = 500; // Pause before next
+        }
+
+        setTimeout(type, typeSpeed);
+    }
+
+    // Start typing after a short delay (post reveal)
+    setTimeout(type, 1000);
+}
+
+document.addEventListener('DOMContentLoaded', initTypingAnimation);
