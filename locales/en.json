@@ -1,0 +1,55 @@
+{
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "experiences": "Experiences",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hello, I'm Ahmad Al Wabil",
+    "description": "Passionate about <span class=\"text-ghibli-accent font-medium\">clean architecture</span> and crafting <span class=\"text-ghibli-accent font-medium\">immersive user experiences</span>. Let's build something extraordinary.",
+    "resume": "View Resume"
+  },
+  "sections": {
+    "selectedWorks": "Selected Works",
+    "experiences": "Companies I've Worked With"
+  },
+  "contact": {
+    "title": "Let's Connect",
+    "description": "Currently open for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
+    "cta": "Say Hello 👋"
+  },
+  "footer": {
+    "copyright": "© 2026 Ahmad Al Wabil. Built with Publish, a Swift-powered static site generator."
+  },
+  "pagination": {
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "projects": {
+    "project-1": {
+      "subtitle": "Track Shared Expenses",
+      "description": "<p>Talangin is an application designed to help young people manage shared expenses across multiple social circles using smart receipt scanning and automatic calculations, making payments transparent, fair, and free from miscalculations or the awkwardness of asking others to pay.</p><p>I served as the Tech Lead on this project, responsible for defining the technical architecture, leading feature development, and managing the deployment to TestFlight.</p>"
+    },
+    "project-2": {
+      "subtitle": "macOS Customer Service Chat Platform",
+      "description": "<p>Klar is a macOS application designed to help business owners and customer service teams efficiently handle repetitive technical customer inquiries through AI-powered automation. The application integrates with the WhatsApp Business API, allowing customers to interact seamlessly via WhatsApp while the AI system handles and responds to common technical queries.</p><p>I worked as the Tech Lead on this project, where I was responsible for defining the technical architecture, connecting the WhatsApp Business API with the backend system, and integrating the backend AI services. In addition, I implemented frontend API calls to ensure smooth communication between the macOS application, backend services, and the AI system, while coordinating the overall development process.</p>"
+    },
+    "project-3": {
+      "subtitle": "Redesign Snorkeling App",
+      "description": "<p>Coco.co is a redesign project aimed at improving user acquisition by introducing new features and enhancing the existing design. It is a snorkeling trip application that provides users with information about snorkeling destinations. In this project, I worked as an iOS developer, collaborating closely with the team.</p><p>We developed a shared digital space feature that allows contributors and planners to view, edit, and confirm trip details collaboratively, reducing fragmented communication and minimizing reliance on a single planner.</p>"
+    },
+    "project-4": {
+      "subtitle": "Cooperative Mobile Game",
+      "description": "<p>Air Love is a cooperative mobile game built using the Unity game engine and Unity Netcode for GameObjects to support a seamless two-player experience. The game assigns players to different but interdependent roles that must be performed simultaneously in order to progress.</p><p>The gameplay is designed to emphasize cooperation through shared objectives, encouraging communication and teamwork between players. By focusing on coordinated actions and collaborative problem-solving, the game provides a structured cooperative experience intended to strengthen interaction and engagement between players.</p><p>I worked as a game developer on this project, contributing to the development of the game mechanics proof of concept and implementing a parallax background system. This project marked my first experience in game development using Unity 2D.</p>"
+    },
+    "project-5": {
+      "subtitle": "Scan Hanzi for non-halal Ingredients",
+      "description": "<p>FenScan is an iOS application developed to assist travelers in Taiwan who are not familiar with Chinese Hanzi when purchasing souvenirs for relatives or family members who cannot consume food or beverage products containing non-halal ingredients. The application utilizes machine learning to classify halal and non-halal ingredients written in Chinese Hanzi.</p><p>I worked as an iOS developer on this project and also contributed to the data training process. The main challenges involved data collection, model training and evaluation, and integrating the trained machine learning model into the iOS application.</p>"
+    },
+    "project-6": {
+      "subtitle": "Managing Valet Parking App",
+      "description": "<p>SwiftPark is an iOS application developed to help valet parking officers track and manage vehicles entering valet parking areas. The application simplifies the check-in and check-out process by enabling accurate data recording, real-time vehicle status tracking, and organized vehicle management. An OCR feature is used to extract text from captured images, reducing the need for manual data entry.</p><p>I worked as a developer on this project, and the main challenge was implementing OCR to reliably convert images into text that could be used as structured data within the application.</p>"
+    }
+  }
+}
